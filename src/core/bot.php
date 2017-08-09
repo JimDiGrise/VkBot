@@ -30,14 +30,11 @@
         public function isLike($itemId){
             $res = $this->client->request('GET', 'likes.isLiked?access_token=' . $this->accessToken . '&domain=reutov.ilya&type=post&item_id=' . $itemId);
             $body = json_decode($res->getBody());
-            //print_r($body);
             return $body->response;
         }
         public function setLike($itemId) {
-            //echo $this->accessToken;
-            $res = $this->client->request('GET', 'likes.add?access_token=' . $this->accessToken . ' &domain=reutov.ilya&type=post&item_id=' . $itemId);
+            $res = $this->client->request('GET', 'likes.add?access_token=' . $this->accessToken . '&domain=reutov.ilya&type=post&item_id=' . $itemId);
             $body = json_decode($res->getBody());
-            print_r($body);
          
         }   
         public function setLikes() {
